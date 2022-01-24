@@ -1,0 +1,135 @@
+@import "./font.css";
+* {
+  direction: rtl;
+  font-family: IRANYekanRegular, serif;
+}
+html ,#__nuxt, #__layout{
+  height: 100vh;
+  min-height:700px;
+}
+body{
+  /*height: 100%;*/
+  background-color: #F1F2F5!important;
+}
+.selectedBlue{
+  background: #F6F7FF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 12px 16px #5063FF28;
+  border: 1px solid #5063FF;
+  border-radius: 8px;
+  opacity: 1;
+  color: #5063FF;
+}
+.hh{
+  display: none;
+}
+.hh :hover{
+  display: flex;
+}
+.hg{
+  display: flex;
+}
+.hg :hover{
+  display: none!important;
+}
+@media (max-width: 1000px) {
+  .minWight{
+    width: 1200px;
+  }
+}
+.table-link:nth-of-type(even) {
+  background:#FAFAFA;
+}
+.modaltor__overlay{
+  background: #000000 0% 0% no-repeat padding-box!important;
+  opacity: 0.64!important;
+}
+.modaltor__panel{
+  max-width: 800px!important;
+  height: 700px!important;
+  background: #FAFAFA 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 64px #14143214;
+  border-radius: 8px;
+  opacity: 1;
+  padding: 24px!important;
+}
+button.page-link {
+  display: inline-block;
+}
+button.page-link {
+  font-size: 20px;
+  color: #29b3ed;
+  font-weight: 500;
+}
+.offset{
+  width: 500px !important;
+  margin: 20px auto;
+}
+
+
+.pagination{
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.page-item {
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  padding-top: 4px;
+  text-align: center;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #DBDBDB;
+  border-radius: 8px;
+  opacity: 1;
+}
+.page-item-active{
+  background: #EBF0FF 0% 0% no-repeat padding-box;
+  border: 1px solid #5063FF;
+}
+.page-item.active{
+  background: #EBF0FF 0% 0% no-repeat padding-box;
+  border: 1px solid #5063FF;
+}
+.page-item .active{
+  background: #EBF0FF 0% 0% no-repeat padding-box;
+  border: 1px solid #5063FF;
+}
+.page-item active{
+  background: #EBF0FF 0% 0% no-repeat padding-box;
+  border: 1px solid #5063FF;
+}
+
+.vpd-input-group input {
+  width: inherit;
+ border: unset!important;
+}
+.vpd-icon-btn{
+  background-color: unset!important;
+}
+
+.bg-gray-907{
+  background-color: #EBEBEB!important;
+}
+.modaltor__panel {
+  padding: unset!important;
+}
+.modaltor__content{
+  padding: 2% !important;
+}
+.modaltor__header{
+  background-color: #DBDBDB!important;
+  margin-top: -24px;
+  width: 100%;
+  padding-top: 5%;
+}
+.dir-ltr {
+  direction: ltr !important;
+}
+.dir-rtl {
+  direction: rtl !important;
+}
+
+
+
