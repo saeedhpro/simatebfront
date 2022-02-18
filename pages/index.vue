@@ -65,7 +65,6 @@ export default {
   layout: 'login',
   mounted() {
     const m = this.$moment(this.$moment(new Date()).format("jYYYY/jMM/jDD"), "jYYYY/jMM/jDD")
-    console.log(this.$moment.jDaysInMonth(this.$moment(new Date()).format("jYYYY"), this.$moment(new Date()).format("jMM")))
   },
   data() {
     return {

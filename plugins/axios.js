@@ -110,7 +110,7 @@ const setupProgress = (axios, ctx) => {
 
 export default (ctx, inject) => {
   // const baseURL = 'http://localhost:3000/'
-  const baseURL = 'https://simateb.iran.liara.run/'
+  const baseURL = 'https://apisimateb.ovintech.ir/'
   const token = ctx.$cookies.get('token');
   const headers = {
     common: {

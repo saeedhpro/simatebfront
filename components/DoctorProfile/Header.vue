@@ -117,6 +117,7 @@ export default {
       await this.$router.replace('/Login')
     },
     canShow(prof) {
+      if (!this.user) return false;
       const p = this.user.profession
       switch (prof) {
         case "radio":
