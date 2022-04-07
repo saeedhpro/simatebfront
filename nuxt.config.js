@@ -70,7 +70,6 @@ export default {
     transpile: ['vue-image-crop-upload'],
   },
   server: {
-    host: '0.0.0.0',
     port: 5000
   }
 }
