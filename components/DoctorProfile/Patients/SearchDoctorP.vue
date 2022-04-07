@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">جستجو پیشرفته</p>
           </div>
         </div>
@@ -34,19 +35,36 @@
             </div>
           </div>
 
-          <div>
+          <div class="mt-3">
             <div class="mb-2">وضعیت بیمار</div>
-            <select class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
-              <option>فعال(دارای پرونده)</option>
-              <option>غیرفعال</option>
-              <option>همه بیماران</option>
+            <select class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"
+            v-model="case_types">
+<!--              <option>فعال(دارای پرونده)</option>-->
+<!--              <option>غیرفعال</option>-->
+<!--              <option>همه بیماران</option>-->
+<!--              <option v-for="(i, n) in case_types.data" :key="n" :value="i.id">{{ `${i.case_types}` }}</option>-->
+<!--              <option v-for="(i, n) in case_types" :key="n" :value="i.id">{{i.case_types}}</option>-->
+              <option  v-for="(i , index) in CasesList" :key="index" :value="i.id" >
+                {{i.case_types}}
+              </option>
             </select>
+
+
+<!--            <select-->
+<!--              v-if="employees"-->
+<!--              v-model="user_id"-->
+<!--              @change="getWallet"-->
+<!--              class="w-full h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg placeholder-color-black Bold"-->
+<!--              placeholder="کیف پول من">-->
+<!--              <option v-for="(i, n) in employees.data" :key="n" :value="i.id">{{ `${i.fname} ${i.lname}` }}</option>-->
+<!--            </select>-->
+
           </div>
 
         </div>
 
         <div class="mt-8 flex flex-wrap justify-between">
-          <div class="w-28 h-10 py-2 border-solid border border-gray-700 rounded-lg text-gray-700 text-center">پاک کردن
+          <div class="w-28 h-10 py-2 border-solid border border-gray-700 rounded-lg text-gray-700 text-center" @click="deleteForm">پاک کردن
             فرم
           </div>
           <div class="flex" style="align-items: center">
@@ -98,7 +116,12 @@ export default {
       q: null,
       start_date: null,
       end_date: null,
+      case_types:[]
     }
+  },
+  mounted() {
+    this.$store.dispatch('case_types/userWallet/getCaseTypes')
+    this.getCasesList()
   },
   computed: {
     userLogin() {
@@ -106,6 +129,9 @@ export default {
     },
     userList() {
       return this.$store.getters['doctor/patients/getPatients']
+    },
+    CasesList(){
+      return this.$store.getters['case_types/userWallet/getCasesList']
     }
   },
   methods: {
@@ -131,6 +157,9 @@ export default {
       if (this.q) {
         r += `&q=${this.q}`
       }
+      if (this.case_types) {
+        r += `&case_types=${this.case_types}`
+      }
       if (query.page) {
         r += `&page=${query.page}`
       }
@@ -141,11 +170,21 @@ export default {
           q: this.q || null,
           start_date: this.start_date,
           end_date: this.end_date,
+          case_types:this.case_types
         }
       })
       this.$store.dispatch('doctor/patients/getPatients', r)
       this.close();
-    }
+    },
+    deleteForm(){
+      this.q = null
+      this.start_date = ''
+      this.end_date = ''
+      this.case_types = ''
+    },
+    getCasesList(){
+      this.$store.dispatch(`case_types/userWallet/getCaseTypes`)
+    },
   }
 }
 </script>

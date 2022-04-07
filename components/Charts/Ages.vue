@@ -3,11 +3,12 @@
     <div class="flex flex-wrap justify-between">
 
       <div class="w-full md:w-1/2 p-1">
-        <div class="p-5 bg-white rounded-lg shadow-md">
+        <div class="w-full px-5 py-1 h-10 rounded-tr-lg rounded-tl-lg text-white text-md text-right bg-blue-901">رده سنی</div>
+        <div class="p-5 bg-white rounded-br-lg rounded-bl-lg shadow-md">
           <div class="flex flex-wrap justify-between">
             <div>
               <label>از تاریخ</label>
-              <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
+              <div class="w-56 mt-2 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
                 <date-picker @change="onStartChange" format="YYYY-MM-DD HH:mm:ss" display-format="jYYYY/jMM/jDD"
                              :value="start_date"
                              placeholder="تاریخ را انتخاب کنید"></date-picker>
@@ -15,7 +16,7 @@
             </div>
             <div>
               <label>تا تاریخ</label>
-              <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
+              <div class="w-56 mt-2 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
                 <date-picker @change="onEndChange" format="YYYY-MM-DD HH:mm:ss" display-format="jYYYY/jMM/jDD"
                              :value="end_date"
                              placeholder="تاریخ را انتخاب کنید"></date-picker>
@@ -25,22 +26,27 @@
           <div class="mt-2 flex flex-wrap justify-between">
             <div>
               <label>ابتدای سن</label>
+              <div class="mt-2">
               <input @input="onChange" v-model="age_start"
                      class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"/>
+                </div>
             </div>
             <div>
               <label>انتهای سن</label>
+              <div class="mt-2">
               <input @input="onChange" v-model="age_end"
                      class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"/>
+                </div>
             </div>
           </div>
           <div class="flex flex-col justify-center items-center mt-8">
-            تعداد:{{ number }}
+            تعداد:{{   number | toPersianNumber  }}
           </div>
         </div>
       </div>
       <div class="w-full md:w-1/2 p-1">
-        <div class="p-5 bg-white rounded-lg shadow-md">
+        <div class="w-full px-5 py-1 h-10 rounded-tr-lg rounded-tl-lg text-white text-md text-right bg-blue-901">شهر بیماران</div>
+        <div class="p-5 bg-white rounded-br-lg rounded-bl-lg shadow-md">
           <table class="table-fixed w-full border-collapse border border-gray-400 dark:border-gray-600 font-semibold p-4 text-gray-900 dark:text-gray-200">
             <thead>
             <tr>

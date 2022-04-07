@@ -3,7 +3,7 @@
     <div class="md:h-16 h-auto container flex flex-wrap justify-between align-center" style="align-items: center">
       <div class="md:flex flex" v-if="user" style="align-items: center">
         <img :src="user.logo" class="w-10 h-10 ml-2 rounded-full" v-if="user.logo">
-        <img src="/img/1601734331278.jpg" class="w-10 h-10 ml-2 rounded-full">
+        <img src="/img/android-chrome-192x19211.png" class="w-10 h-10 ml-2 rounded-full">
         <div class="text-gray-903 text-sm">{{ user.fname }} {{ user.lname }}</div>
         <div class="relative">
           <button @click="show =! show ">

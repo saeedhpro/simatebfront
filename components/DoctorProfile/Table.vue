@@ -5,7 +5,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="openApp = false">
             </div>
             <p class="mr-2">فرم پذیرش</p>
@@ -38,10 +39,12 @@
           </div>
           <div>
             <div class="mb-4 text-black">تاریخ:<span
+              v-if="item.start_at"
               class="Bold text-lg"> {{
                 ($moment(item.start_at.Time, "YYYY-MM-DDTHH:mm:SS").format('jYYYY/jMM/jDD') | toPersianNumber)
               }} </span></div>
             <div class="mb-4 text-black">ساعت:<span
+              v-if="item.start_at"
               class="Bold text-lg">{{
                 ($moment(item.start_at.Time, "YYYY-MM-DDTHH:mm:SS").format('HH:mm')) | toPersianNumber
               }}</span>
@@ -173,9 +176,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">فرم پذیرش</p>
           </div>
         </div>
@@ -200,7 +204,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="doctorModal = !doctorModal">
             </div>
           </div>
@@ -495,7 +500,8 @@
       <template #header>
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="closeDent(1)">
             </div>
           </div>
@@ -518,7 +524,8 @@
       <template #header>
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="closeDent(2)">
             </div>
           </div>
@@ -562,6 +569,7 @@
         <div class="w-32 py-5 mx-auto text-center">وضعیت</div>
       </div>
 
+      <div v-if="listUser">
       <div class="h-10 flex border-b-2 border-l-2 border-r-2 border-gray-901 minWight table-link"
            v-for="(i , n) in listUser">
         <div class="w-10 py-2 border-l-2 border-gray-901 text-center">{{ n + 1 | toPersianNumber }}</div>
@@ -571,7 +579,7 @@
         >
           <input type="checkbox">
           <img :src="i.logo" class="w-8 h-8 mx-2 rounded-md" v-if="i.logo">
-          <img src="/img/1601734331278.jpg" class="w-8 h-8 mx-2 rounded-md" v-else>
+          <img src="/img/android-chrome-192x19211.png" class="w-8 h-8 mx-2 rounded-md" v-else>
           {{ i.fname }} {{ i.lname }}
         </button>
 
@@ -581,10 +589,10 @@
           <span v-if="i.file_id" class="p-1 bg-gray-200 rounded">{{ i.file_id | toPersianNumber }}</span>
           <span v-else class="p-1 bg-gray-200 rounded">-</span>
         </div>
-        <div class="w-40 py-2 border-l-2 border-gray-901 text-center">
+        <div class="w-40 py-2 border-l-2 border-gray-901 text-center" v-if="i.start_at">
           {{ $moment(i.start_at.Time, "YYYY-MM-DDTHH:mm:SS").format("jYYYY/jMM/jDD") | toPersianNumber }}
         </div>
-        <div class="w-32 py-2 border-l-2 border-gray-901 text-center">{{
+        <div class="w-32 py-2 border-l-2 border-gray-901 text-center" v-if="i.start_at">{{
             $moment(i.start_at.Time, "YYYY-MM-DDTHH:mm:SS").format("HH:mm:ss") | toPersianNumber
           }}
         </div>
@@ -614,6 +622,7 @@
           <span class="w-20 px-4 text-pink-200 bg-red-200 rounded-md" v-else-if="i.status == 3">کنسل شده</span>
         </div>
       </div>
+        </div>
       <paginate
         v-if="false"
         v-model="page"

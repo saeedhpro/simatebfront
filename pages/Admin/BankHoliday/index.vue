@@ -5,32 +5,31 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">تعطیلات رسمی</p>
           </div>
         </div>
       </template>
       <template #body>
-        <div class="flex flex-wrap justify-between">
+        <div>
           <div>
             <label>عنوان</label>
-            <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
-              <input type="text" class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"
+              <input type="text" class="w-full mt-2 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"
                      v-model="title">
-            </div>
           </div>
-          <div>
+          <div class="my-5">
             <label>تاریخ</label>
-            <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
+            <div class="w-full mt-2 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
               <date-picker format="YYYY-MM-DD" display-format="jYYYY/jMM/jDD" :value="hdate" @input="onChange"
                            placeholder="تاریخ را انتخاب کنید"></date-picker>
             </div>
           </div>
           <div>
             <label>سازمان ها</label>
-            <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
+            <div class="mt-2">
               <tree-select
                 v-model="organization_id"
                 :multiple="false"

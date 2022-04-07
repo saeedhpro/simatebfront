@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">پیامک جدید</p>
           </div>
         </div>
@@ -67,7 +68,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="open1 = false">
             </div>
             <p class="mr-2">نوتیفیکیشن جدید</p>
@@ -123,18 +125,18 @@
 
       <img src="/img/Line%2041-2.svg" class="mx-2 md:flex hidden" width="706px">
 
-      <button class="w-36 h-12 px-1 text-sm flex bg-blue-902 rounded-lg text-white text-center click"
+      <button v-if="status5" class="w-36 h-12 px-1 text-sm flex bg-blue-902 rounded-lg text-white text-center click"
               style="align-items: center" @click="open=true"
-              v-if="status = 'app-component-1'">
+             >
         <div class="p-2 ml-4 bg-blue-903 rounded-lg text-center">
           <img src="/img/user-plus.svg">
         </div>
         <span class="click">پیامک جدید</span>
       </button>
 
-      <button class="w-48 h-12 px-1 mr-2 text-sm flex bg-blue-902 rounded-lg text-white text-center click"
+      <button v-if="status6" class="w-48 h-12 px-1 mr-2 text-sm flex bg-blue-902 rounded-lg text-white text-center click"
               style="align-items: center" @click="open1=true"
-              v-if="status = 'app-component-2'">
+              >
         <div class="p-2 ml-4 bg-blue-903 rounded-lg text-center">
           <img src="/img/user-plus.svg">
         </div>
@@ -216,6 +218,8 @@ export default {
       },
       status3: true,
       status4: false,
+      status5: true,
+      status6: false,
       act: null,
       selectedUsers: null,
       normalizer(node) {
@@ -342,10 +346,14 @@ export default {
     status1() {
       this.status3 = true
       this.status4 = false
+      this.status5 = true
+      this.status6 = false
     },
     status2() {
       this.status4 = true
       this.status3 = false
+      this.status6 = true
+      this.status5 = false
     }
   }
 }

@@ -16,7 +16,7 @@
           <div class="w-10 py-2 text-center border-l-2 border-gray-901">{{ n + 1 }}</div>
           <div class="w-64 px-3 py-2 flex border-l-2 border-gray-901 text-center" style="align-items: center">
             <input @change="selectItem($event, i.id)" type="checkbox" :checked="isSelected(i.id)">
-            <img :src="i.logo ? i.logo : 'static/img/1601734331278.jpg'" class="mx-2 w-5 h-5 rounded-lg">
+            <img :src="i.logo ? i.logo : 'static/img/android-chrome-192x19211.png'" class="mx-2 w-5 h-5 rounded-lg">
             {{ i.staff_fname }} {{ i.staff_lname }}
           </div>
           <div class="w-32 py-2 border-l-2 border-gray-901 text-center">{{ i.number }}</div>

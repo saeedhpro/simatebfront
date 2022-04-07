@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">فرم پرداخت</p>
           </div>
         </div>
@@ -154,7 +155,7 @@
             <div class="w-64 px-3 py-2 flex border-l-2 border-gray-901 text-center" style="align-items: center">
               <input @change="selectItem($event, i.id)" type="checkbox" :checked="isSelected(i.id)">
               <img :src="i.logo" class="mx-2 w-5 h-5 rounded-lg" v-if="i.logo">
-              <img src="/img/1601734331278.jpg" class="mx-2 w-5 h-5 rounded-lg" v-else>
+              <img src="/img/android-chrome-192x19211.png" class="mx-2 w-5 h-5 rounded-lg" v-else>
               {{ i.user_fname  | toPersianNumber }}{{ i.user_lname  | toPersianNumber }}
             </div>
             <div class="dir-ltr w-32 py-2 border-l-2 border-gray-901 text-center">

@@ -1,18 +1,19 @@
 <template>
   <div class="overflow-x-auto" v-if="list">
-    <vue-modaltor :visible="item !== null" @hide="item = null">
+    <vue-modaltor :visible="item !== null" @hide="item = null" >
       <template #header>
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">فرم پذیرش</p>
           </div>
         </div>
       </template>
-      <template #body v-if="item && user">
+      <template #body v-if="item && user" style="height: 50%!important;padding-bottom: 0!important;">
         <div>
           <div class="flex flex-row">
             <div class="w-full md:w-1/3 flex flex-row">
@@ -26,7 +27,7 @@
                 <span>{{ item.code | toPersianNumber }}</span>
               </div>
               <div class="w-full md:w-1/2 flex flex-col user-details">
-                <span>تاریخ ویزیت: {{
+                <span v-if="i.start_at">تاریخ ویزیت: {{
                     $moment(item.start_at.Time).locale("fa").format("dddd DD jMMM") | toPersianNumber
                   }}</span>
                 <span>علت مراجعه: {{ item.case_type ? item.case_type : 'معاینه' }}</span>
@@ -40,8 +41,8 @@
                       v-else-if="item.status == 1">رزرو شده</span>
                 <span class="p-2 flex justify-center text-pink-200 bg-red-200 rounded-md" style="max-width: 120px;"
                       v-else-if="item.status == 3">کنسل شده</span>
-                <span v-if="user.appcode">کد اپ: {{ user.appcode }}</span>
-                <span v-else>کد اپ: <span>غیرفعال</span><button @click="createCode">ایجاد کد جدید</button></span>
+                <span class="p-2 flex justify-center text-gray-900 bg-gray-903 rounded-md" style="max-width: 120px;" v-if="user.appcode">کد اپ: {{ user.appcode }}</span>
+                <span v-else>کد اپ: <span>غیرفعال</span><button @click="createCode" class="p-2 mt-3 flex justify-center text-gray-900 bg-gray-903 rounded-md" style="max-width: 120px;">ایجاد کد جدید</button></span>
               </div>
             </div>
           </div>
@@ -59,18 +60,18 @@
             <div class="flex flex-col">
               <div class="flex flex-col mt-4">
                 <span>توضحات پزشک: </span>
-                <span class="p-2.5 border-green-200">{{ item.prescription }}</span>
+                <span class="p-2.5 border-green-200">{{ item.description }}</span>
               </div>
             </div>
           </div>
-          <div class="flex flex-row">
-            <div class="flex flex-col">
-              <div class="flex flex-col mt-4">
+          <div class="flex flex-wrap">
+            <div class="flex">
+              <div class="flex flex-wrap mt-4" style="align-items: center">
                 <span>{{ `نتایج ${user.profession ? user.profession.name : '-'}:` }}</span>
                 <div class="flex flex-row flex-wrap">
                   <img v-for="(i,n) in logos" :src="i" :key="n" style="max-width: 150px; margin: 5px">
                   <button
-                    class="w-40 h-12 px-2 ml-2 text-sm flex border-solid border border-blue-902 rounded-lg text-blue-902 text-center click"
+                    class="w-40 h-12 px-2 my-2 text-sm flex border-solid border border-blue-902 rounded-lg text-blue-902 text-center click"
                     @click="openFileChooser"
                     style="align-items: center">
                     <img src="/img/Group%20191.svg" class="w-8 h-8 ml-2">
@@ -88,7 +89,6 @@
             تایید
           </button>
         </div>
-
       </template>
     </vue-modaltor>
     <div class="flex border-solid border-2 border-gray-901 rounded-t-lg bg-gray-902 minWight ">
@@ -108,7 +108,7 @@
               @click="itemClicked(i)"
       >
         <img :src="i.logo" class="w-8 h-8 mx-2 rounded-md" v-if="i.logo">
-        <img src="/img/1601734331278.jpg" class="w-8 h-8 mx-2 rounded-md" v-else>
+        <img src="/img/android-chrome-192x19211.png" class="w-8 h-8 mx-2 rounded-md" v-else>
         {{ i.fname }} {{ i.lname }}
       </button>
 

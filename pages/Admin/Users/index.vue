@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">افزودن کاربر</p>
           </div>
           <div>
@@ -18,12 +19,12 @@
       </template>
       <template #body>
         <div class="pt-3 flex flex-wrap justify-between" style="align-items: center">
-          <div @click="openFileChooser" class="flex align-top">
-            <div>تصویر کاربری</div>
+          <button @click="openFileChooser" class="flex align-top">
+<!--            <div>تصویر کاربری</div>-->
             <input @change="uploadLogo" name="logo" type="file" hidden ref="logo" accept="image/*">
-            <img v-if="!logo" src="/img/imgUser.svg" class="mr-2 w-36 h-36">
-            <img v-else :src="logo" class="mr-2 w-36 h-36">
-          </div>
+            <img v-if="!logo" src="/img/imgUser.svg" class="mr-2 w-52 h-36">
+            <img v-else :src="logo" class="mr-2 w-52 h-36">
+          </button>
           <div>
             <div class="flex flex-wrap">
               <div>
@@ -46,18 +47,19 @@
                   <div
                     class="w-28 h-10 px-2 py-2 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
                     style="align-items: center"
-                    @click="setMale" :class="{'selectedBlue' : status === '1'}">
-                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
-                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
-                    <span class="mx-auto">آقا</span>
-                  </div>
-                  <div
-                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
-                    style="align-items: center"
                     @click="setFemale" :class="{'selectedBlue' : status === '2'}">
                     <img src="/img/womanBlue.svg" class="w-8 h-8 ml-2" v-if="status === 'female'"/>
                     <img src="/img/woman.svg" class="w-8 h-8 ml-2" v-else/>
                     <span class="mx-auto">خانم</span>
+                  </div>
+
+                  <div
+                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
+                    style="align-items: center"
+                    @click="setMale" :class="{'selectedBlue' : status === '1'}">
+                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
+                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
+                    <span class="mx-auto">آقا</span>
                   </div>
                 </div>
               </div>
@@ -162,9 +164,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">افزودن کاربر</p>
           </div>
           <div>
@@ -176,12 +179,12 @@
       <template #body>
 
         <div class="pt-3 flex flex-wrap justify-between" style="align-items: center">
-          <div @click="openFileChooser" class="flex align-top">
-            <div>تصویر کاربری</div>
+          <button @click="openFileChooser" class="flex align-top">
+<!--            <div>تصویر کاربری</div>-->
             <input @change="uploadLogo" name="logo" type="file" hidden ref="logo" accept="image/*">
-            <img v-if="!logo" src="/img/imgUser.svg" class="mr-2 w-36 h-36">
-            <img v-else :src="logo" class="mr-2 w-36 h-36">
-          </div>
+            <img v-if="!logo" src="/img/imgUser.svg" class="mr-2 w-52 h-36">
+            <img v-else :src="logo" class="mr-2 w-52 h-36">
+          </button>
           <div>
             <div class="flex flex-wrap">
               <div>
@@ -204,19 +207,20 @@
                   <div
                     class="w-28 h-10 px-2 py-2 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
                     style="align-items: center"
-                    @click="setMale" :class="{'selectedBlue' : status === '1'}">
-                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
-                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
-                    <span class="mx-auto">آقا</span>
-                  </div>
-                  <div
-                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
-                    style="align-items: center"
                     @click="setFemale" :class="{'selectedBlue' : status === '2'}">
                     <img src="/img/womanBlue.svg" class="w-8 h-8 ml-2" v-if="status === 'female'"/>
                     <img src="/img/woman.svg" class="w-8 h-8 ml-2" v-else/>
                     <span class="mx-auto">خانم</span>
                   </div>
+                  <div
+                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
+                    style="align-items: center"
+                    @click="setMale" :class="{'selectedBlue' : status === '1'}">
+                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
+                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
+                    <span class="mx-auto">آقا</span>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -229,11 +233,11 @@
             <select class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg"
                     v-model="user_group_id">
               <option value="1">بیمار</option>
-              <option value="2" v-if="isAdmin">مدیر سیستم</option>
-              <option value="3" v-if="isAdmin">پزشک</option>
+              <option value="2" v-if="canApp()">مدیر سیستم</option>
+              <option value="3" v-if="canApp()">پزشک</option>
               <option value="4">منشی پزشک</option>
-              <option value="5" v-if="isAdmin">مسئول آزمایشگاه</option>
-              <option value="100" v-if="isAdmin">پشتیبان فنی سیستم</option>
+              <option value="5" v-if="canApp()">مسئول آزمایشگاه</option>
+              <option value="100" v-if="canApp()">پشتیبان فنی سیستم</option>
             </select>
           </div>
           <div>
@@ -261,9 +265,11 @@
           <div class="mr-5">
             <div class="mb-2">تاریخ تولد</div>
             <!--          <input class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg" v-model="birth_date"/>-->
+            <div class="w-56 h-10 px-2 bg-white border-solid border-gray-901 border rounded-lg">
             <date-picker format="YYYY-MM-DD" display-format="jYYYY/jMM/jDD" :value="birth_date"
                          @input="onBirthDateChange"
                          placeholder="تاریخ را انتخاب کنید"></date-picker>
+              </div>
           </div>
         </div>
 
@@ -322,9 +328,9 @@
         </div>
 
         <div class="mt-8 flex flex-wrap justify-between">
-          <div class="w-28 h-10 py-2 border-solid border border-gray-700 rounded-lg text-gray-700 text-center"
+          <button class="w-28 h-10 py-2 border-solid border border-gray-700 rounded-lg text-gray-700 text-center"
                @click="cleanForm">پاک کردن فرم
-          </div>
+          </button>
           <div class="flex" style="align-items: center">
             <button class="w-28 h-10 py-2 text-center bg-gray-907 rounded-lg" @click="close">انصراف</button>
             <button class="w-56 h-10 py-2 mr-3 text-center bg-blue-902 rounded-lg text-white" @click="addUser">ذخیره
@@ -371,6 +377,7 @@
                 v-model="act"
                 class="border border-gray-500 rounded-lg text-gray-600 h-12 w-40 pl-5 pr-2 bg-white hover:border-gray-400 focus:outline-none appearance-none">
                 <option value="1">حذف</option>
+                <option value="2">ارسال پیامک</option>
               </select>
             </div>
           </div>
@@ -408,6 +415,10 @@ export default {
     setTimeout(() => {
       this.getResults()
     }, 500);
+    this.prof_id = this.userLogin.profession.id;
+    if (this.canApp()) {
+      this.$store.dispatch('admin/user/getOrganizationAllUsers', this.userLogin.organization_id)
+    }
   },
   data() {
     return {
@@ -437,6 +448,10 @@ export default {
     }
   },
   methods: {
+    canApp() {
+      return this.prof_id =2
+    },
+
     selectItem(checked, id) {
       this.$store.dispatch('selected/updateSelected', {
         checked: checked,
@@ -583,7 +598,7 @@ export default {
         this.organization_id = null,
         this.tel = null,
         this.nid = null,
-        this.birth_date = null,
+        this.birth_date = '',
         this.address = null,
         this.introducer = null,
         this.password = null,
@@ -632,8 +647,8 @@ export default {
       return this.$store.getters['selected/getSelected']
     },
     isAdmin() {
-      const profession = this.userLogin.profession;
-      return profession.id == 2;
+      const user_group_id = this.userLogin.user_group_id;
+      return user_group_id.id == 2;
     }
   }
 }

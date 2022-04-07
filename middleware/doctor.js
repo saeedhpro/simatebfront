@@ -16,7 +16,7 @@ export default function ({ store, redirect }) {
   else {
     const user = store.state.login.user.user_group_id;
     if(user.user_group_id === 3 || user.user_group_id === 4){
-      return redirect('/Doctor/Admissions')
+      return redirect('/Organization/Admissions')
     }
   }
 }

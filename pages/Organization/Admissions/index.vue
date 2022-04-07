@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">فرم پذیرش</p>
           </div>
         </div>
@@ -117,7 +118,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close1">
             </div>
             <!--          <p class="mr-2">فرم پذیرش</p>-->
@@ -166,9 +168,10 @@
           <img src="/img/SearchBlue.svg" class="ml-2 w-8" v-else>جستجو
         </button>
 
-        <img src="/img/Line%2041-2.svg" class="md:flex hidden mx-3" style="width: 726px">
+        <img src="/img/Line%2041-2.svg" class="md:flex hidden mx-3" style="width: 608px">
         <div class="py-3 px-4 border-solid border-2 border-gray-901 rounded-lg text-blue-901 text-sm">
-          {{ $moment(new Date).format("jYYYY/jMM/jDD") | toPersianNumber }}
+          امروز {{ $moment(new Date).locale("fa").format("dddd DD jMMM") | toPersianNumber}}
+
         </div>
 
         <button v-if="canApp()" @click="openModal"

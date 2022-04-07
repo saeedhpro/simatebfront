@@ -20,7 +20,7 @@
             <nuxt-link :to="`/admin/institution/${i.id}`"
                        style="align-items: center;display: flex;flex-direction: row">
               <img v-if="i.logo" :src="i.logo" class="mx-2 w-8 h-8 rounded-full"/>
-              <img v-else src="/img/1601734331278.jpg" class="mx-2 w-8 h-8 rounded-full">
+              <img v-else src="/img/android-chrome-192x19211.png" class="mx-2 w-8 h-8 rounded-full">
               {{ i.name }}
             </nuxt-link>
           </div>

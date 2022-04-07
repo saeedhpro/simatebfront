@@ -7,6 +7,8 @@ export const state = () => ({
   orgLabRels: [],
   orgRaRels: [],
   orgOfRels: [],
+  instituteCases: [],
+
 })
 export const mutations = {
   setInstitutions(state, institutions) {
@@ -29,6 +31,9 @@ export const mutations = {
   },
   setOrgOfRels(state, rels) {
     state.orgOfRels = rels
+  },
+  setInstituteCases(state, instituteCases) {
+    state.instituteCases = instituteCases
   },
   addOrgLabRels(state, rel) {
     if (!state.orgLabRels.find(i=>i.id == rel.id)){
@@ -87,6 +92,18 @@ export const actions = {
         if (res.status === 401) {
           throw new Error('Bad credentials')
         } else {
+          return Promise.resolve(res.data)
+        }
+      })
+  },
+  getInstitutionsCases(context ,id) {
+    return this.$axios.get(`/api/v1/organizations/${id}`)
+      .then((res) => {
+        if (res.status === 401) {
+          throw new Error('Bad credentials')
+        } else {
+          context.commit('setInstituteCases', res.data.data)
+          console.log(res.data.data , 'setInstituteCases')
           return Promise.resolve(res.data)
         }
       })
@@ -254,5 +271,8 @@ export const getters = {
   },
   InstitutionsList(state) {
     return state.institutionsList
+  },
+  getInstitutionsCases(state) {
+    return state.instituteCases
   }
 }

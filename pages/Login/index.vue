@@ -4,7 +4,8 @@
       <template #header>
         <!--    add your custom header     -->
         <div class="pb-3" style="align-items: center">
-          <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                     <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
             <img src="/img/xmark.svg" @click="close">
           </div>
         </div>
@@ -87,7 +88,7 @@ export default {
             pauseOnHover: true
           })
           setTimeout(() => {
-            window.location.href = '/Organization'
+            window.location.href = '/Organization/Admissions'
           }, 200)
         })
 

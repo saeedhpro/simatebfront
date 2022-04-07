@@ -211,7 +211,8 @@ export const actions = {
         if (res.status === 401) {
           throw new Error('Bad credentials')
         } else {
-          context.commit('setToday', res.data)
+          context.commit('setToday', res.data.data)
+          console.log(res.data ,'setToday')
           return Promise.resolve()
         }
       })
@@ -225,8 +226,11 @@ export const actions = {
       .then((res) => {
         if (res.status === 401) {
           throw new Error('Bad credentials')
+
         } else {
+          console.log(res.data , 'getTodayAdmissions')
           return Promise.resolve(res.data)
+
         }
       })
       .catch(err => {

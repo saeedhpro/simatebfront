@@ -5,7 +5,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close1">
             </div>
             <p class="mr-2">افزودن کاربر</p>
@@ -46,15 +47,7 @@
                 <div class="mb-2">جنسیت</div>
                 <div class="flex justify-right">
                   <div
-                    class="cursor-pointer w-28 h-10 px-2 py-2 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
-                    style="align-items: center"
-                    @click="setMale1" :class="{'selectedBlue' : status === '1'}">
-                    <img src="/img/man.svg" class="w-8 h-8 ml-2" v-if="user.gender.toLowerCase() === 'male'"/>
-                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
-                    <span class="mx-auto">آقا</span>
-                  </div>
-                  <div
-                    class="cursor-pointer w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
+                    class="cursor-pointer w-28 h-10 px-2 py-2  flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
                     style="align-items: center"
                     @click="setFemale1" :class="{'selectedBlue' : status === '2'}">
                     <img src="/img/womanBlue.svg" class="w-8 h-8 ml-2"
@@ -62,6 +55,15 @@
                     <img src="/img/woman.svg" class="w-8 h-8 ml-2" v-else/>
                     <span class="mx-auto">خانم</span>
                   </div>
+                  <div
+                    class="cursor-pointer w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
+                    style="align-items: center"
+                    @click="setMale1" :class="{'selectedBlue' : status === '1'}">
+                    <img src="/img/man.svg" class="w-8 h-8 ml-2" v-if="user.gender.toLowerCase() === 'male'"/>
+                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
+                    <span class="mx-auto">آقا</span>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -206,7 +208,7 @@
           <div class="w-64 px-3 py-2 flex border-l-2 border-gray-901 text-center" style="align-items: center">
             <input @change="selectItem($event, i.id)" type="checkbox" :checked="isSelected(i.id)">
             <img :src="i.logo" class="mx-2 w-5 h-5 rounded-lg" v-if="i.logo">
-            <img src="static/img/1601734331278.jpg" class="mx-2 w-5 h-5 rounded-lg" v-else>
+            <img src="static/img/android-chrome-192x19211.png" class="mx-2 w-5 h-5 rounded-lg" v-else>
             <!--            <button @click="getUser(i)" v-if="i.fname || i.lname">{{ i.fname }} {{ i.lname }}</button>-->
             <!--            <button @click="getUser(i)" v-else>بدون نام</button>-->
             <nuxt-link :to="`/admin/users/${i.id}`"

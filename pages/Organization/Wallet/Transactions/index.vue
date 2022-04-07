@@ -68,7 +68,7 @@
                 <div class="w-10 py-2 border-l-2 border-gray-901 text-center">{{ n + 1 }}</div>
                 <div class="w-40 py-2 pr-2 flex border-l-2 border-gray-901 text-center">
                   <img :src="i.staff.logo" class="w-8 h-8 mx-2 rounded-md" v-if="i.staff.logo">
-                  <img src="/img/1601734331278.jpg" class="w-8 h-8 mx-2 rounded-md" v-else>
+                  <img src="/img/android-chrome-192x19211.png" class="w-8 h-8 mx-2 rounded-md" v-else>
                   {{ i.appointment.user_fname }} {{ i.appointment.user_lname }}
                 </div>
                 <div class="w-40 py-2 border-l-2 border-gray-901 text-center">{{ i.organization.name }}</div>

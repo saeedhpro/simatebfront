@@ -5,9 +5,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">فرم پذیرش</p>
           </div>
         </div>
@@ -26,7 +27,7 @@
                 <span>{{ item.code | toPersianNumber }}</span>
               </div>
               <div class="w-full md:w-1/2 flex flex-col user-details">
-                <span>تاریخ ویزیت: {{
+                <span v-if="i.start_at">تاریخ ویزیت: {{
                     $moment(item.start_at.Time).locale("fa").format("dddd DD jMMM") | toPersianNumber
                   }}</span>
                 <span>علت مراجعه: {{ item.case_type ? item.case_type : 'معاینه' }}</span>
@@ -122,7 +123,7 @@
       >
         <input @click="selectItem($event, i.id)" type="checkbox" :checked="isSelected(i.id)">
         <img :src="i.logo" class="w-8 h-8 mx-2 rounded-md" v-if="i.logo">
-        <img src="/img/1601734331278.jpg" class="w-8 h-8 mx-2 rounded-md" v-else>
+        <img src="/img/android-chrome-192x19211.png" class="w-8 h-8 mx-2 rounded-md" v-else>
         <span @click="itemClicked(i)">
         {{ i.fname | toPersianNumber }} {{ i.lname | toPersianNumber }}
         </span>
@@ -132,11 +133,11 @@
       <div class="w-32 py-2 border-l-2 border-gray-901 text-center">
         <span class="p-1 bg-gray-200 rounded">{{ i.file_id | toPersianNumber }}</span>
       </div>
-      <div class="w-40 py-2 border-l-2 border-gray-901 text-center">{{
+      <div class="w-40 py-2 border-l-2 border-gray-901 text-center" v-if="i.start_at">{{
           $moment(i.start_at.Time).format("jYYYY/jMM/jDD") | toPersianNumber
         }}
       </div>
-      <div class="w-32 py-2 border-l-2 border-gray-901 text-center">{{
+      <div class="w-32 py-2 border-l-2 border-gray-901 text-center" v-if="i.start_at">{{
           $moment(i.start_at.Time).format("HH:mm:ss") | toPersianNumber
         }}
       </div>

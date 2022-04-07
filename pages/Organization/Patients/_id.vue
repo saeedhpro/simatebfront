@@ -6,7 +6,8 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="closeEditUser">
             </div>
             <p class="mr-2">ویرایش کاربر</p>
@@ -42,21 +43,22 @@
               <div class="mr-5">
                 <div class="mb-2">جنسیت</div>
                 <div class="flex justify-right">
-                  <div class="w-28 h-10 px-2 py-2 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
-                       style="align-items: center"
-                       @click="setMale" :class="{'selectedBlue' : status === '1'}">
-                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
-                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
-                    <span class="mx-auto">آقا</span>
-                  </div>
                   <div
-                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
+                    class="w-28 h-10 px-2 py-2  flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
                     style="align-items: center"
                     @click="setFemale" :class="{'selectedBlue' : status === '2'}">
                     <img src="/img/womanBlue.svg" class="w-8 h-8 ml-2" v-if="status === 'female'"/>
                     <img src="/img/woman.svg" class="w-8 h-8 ml-2" v-else/>
                     <span class="mx-auto">خانم</span>
                   </div>
+                  <div class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click"
+                       style="align-items: center"
+                       @click="setMale" :class="{'selectedBlue' : status === '1'}">
+                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="status === 'male'"/>
+                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
+                    <span class="mx-auto">آقا</span>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -183,7 +185,8 @@
       <template #body>
         <!--    add your custom header     -->
         <div class="pb-3" style="align-items: center">
-          <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                     <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
             <img src="/img/xmark.svg" @click="close">
           </div>
           <div class="text-center Bold text-lg">لطفا در انجام این عمل دقت کنید!</div>
@@ -208,7 +211,8 @@
       <template #body>
         <!--    add your custom header     -->
         <div class="pb-3" style="align-items: center">
-          <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                     <div class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
             <img src="/img/xmark.svg" @click="close">
           </div>
           <div class="text-center Bold text-lg">حذف کاربر</div>
@@ -237,9 +241,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">تاریخچه درمان</p>
           </div>
           <div class="flex" style="align-items: center">

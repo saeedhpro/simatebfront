@@ -169,9 +169,10 @@
         <!--    add your custom header     -->
         <div class="pb-3 flex justify-between border-b border-gray-700" style="align-items: center">
           <div class="flex" style="align-items: center">
-            <div class="w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+                       <button class="mr-3 w-5 h-5 p-1 border-solid border-gray-901 border rounded">
+
               <img src="/img/xmark.svg" @click="close">
-            </div>
+            </button>
             <p class="mr-2">افزودن بیمار</p>
           </div>
           <div>
@@ -212,21 +213,22 @@
                 <div class="mb-2">جنسیت</div>
                 <div class="flex justify-right">
                   <div
-                    class="w-28 h-10 px-2 py-2 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
-                    style="align-items: center"
-                    @click="setMale" :class="{'selectedBlue' : user.status === '1'}">
-                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="user.status === 'male'"/>
-                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
-                    <span class="mx-auto">آقا</span>
-                  </div>
-                  <div
-                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
+                    class="w-28 h-10 px-2 py-2  flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
                     style="align-items: center"
                     @click="setFemale" :class="{'selectedBlue' : user.status === '2'}">
                     <img src="/img/womanBlue.svg" class="w-8 h-8 ml-2" v-if="user.status === 'female'"/>
                     <img src="/img/woman.svg" class="w-8 h-8 ml-2" v-else/>
                     <span class="mx-auto">خانم</span>
                   </div>
+                  <div
+                    class="w-28 h-10 px-2 py-2 mr-5 flex text-center  rounded-lg border-l-2 bg-gray-902 text-sm click cursor-pointer"
+                    style="align-items: center"
+                    @click="setMale" :class="{'selectedBlue' : user.status === '1'}">
+                    <img src="/img/man.svg.svg" class="w-8 h-8 ml-2" v-if="user.status === 'male'"/>
+                    <img src="/img/manGray.svg" class="w-8 h-8 ml-2" v-else/>
+                    <span class="mx-auto">آقا</span>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -347,7 +349,7 @@
         <img src="/img/img-doc.svg" class="w-28 h-28 ml-3" v-else>
         <div class="flex flex-col">
           <span>{{ institution.name }}</span>
-          <span class="my-5 dir-ltr">{{ institution.phone | toPersianNumber }}</span>
+          <span class="my-5">{{ institution.phone | toPersianNumber }}</span>
           <span class="text-md">{{ institution.case_types }}</span>
         </div>
       </div>

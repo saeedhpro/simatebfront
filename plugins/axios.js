@@ -110,7 +110,8 @@ const setupProgress = (axios, ctx) => {
 
 export default (ctx, inject) => {
   // const baseURL = 'http://localhost:3000/'
-  const baseURL = 'https://apisimateb.ovintech.ir/'
+  // const baseURL = 'https://apisimateb.ovintech.ir/'
+  const baseURL = 'https://api.appdoctor.ir/'
   const token = ctx.$cookies.get('token');
   const headers = {
     common: {

@@ -14,7 +14,7 @@
         <div>
           <div>
             <label class=" text-sm">متن یک</label>
-            <textarea v-model="about.text1" class="h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
+            <textarea v-model="about.text1" class="p-2 h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
           </div>
           <div>
             <label class=" text-sm">تصویر یک</label>
@@ -35,7 +35,7 @@
         <div>
           <div>
             <label class=" text-sm">متن دو</label>
-            <textarea v-model="about.text2" class="h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
+            <textarea v-model="about.text2" class="p-2 h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
           </div>
           <div>
             <label class=" text-sm">تصویر دو</label>
@@ -56,7 +56,7 @@
         <div>
           <div>
             <label class=" text-sm">متن سه</label>
-            <textarea v-model="about.text3" class="h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
+            <textarea v-model="about.text3" class="p-2 h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
           </div>
           <div>
             <label class=" text-sm">تصویر سه</label>
@@ -77,7 +77,7 @@
         <div>
           <div>
             <label class=" text-sm">متن چهار</label>
-            <textarea v-model="about.text4" class="h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
+            <textarea v-model="about.text4" class="p-2 h-20 my-2 w-full rounded-lg bg-gray-200"></textarea>
           </div>
           <div>
             <label class=" text-sm">تصویر چهار</label>

@@ -46,7 +46,8 @@ export const actions = {
         if (res.status === 401) {
           throw new Error('Bad credentials')
         } else {
-          context.commit('setCases', res.data)
+          context.commit('setCases', res)
+          console.log(res , 'setCases')
           return Promise.resolve(res.data)
         }
       })

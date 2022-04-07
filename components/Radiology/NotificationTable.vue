@@ -17,7 +17,7 @@
           <div class="w-64 px-3 py-2 flex border-l-2 border-gray-901 text-center" style="align-items: center">
             <input type="checkbox">
             <img :src="i.logo" class="mx-2 w-5 h-5 rounded-lg" v-if="i.logo">
-            <img src="static/img/1601734331278.jpg" class="mx-2 w-5 h-5 rounded-lg" v-else>
+            <img src="static/img/android-chrome-192x19211.png" class="mx-2 w-5 h-5 rounded-lg" v-else>
             {{i.staff_fname}} {{i.staff_lname}}
           </div>
           <div class="w-32 py-2 border-l-2 border-gray-901 text-center">{{ i.number }}</div>
